@@ -1,0 +1,40 @@
+This is a description how to install the "asepy" Python wrapper and
+utilities for the "ase" (Asymmetric Errors) package on your computer.
+
+Naturally, you have to install the "ase" package first. Get it from
+https://github.com/igvgit/AsymmetricErrors
+There, you will find a file called ase-X.X.tar.gz (where X.X stands
+for the version number, 0.7 at the time of this writing). Download
+and install that.
+
+Make sure that you have a good Python distribution. In addition to
+Python standard packages, you will need at least numpy and matplotlib.
+Anaconda Python distribution is known to work well.
+
+Edit the variables ASE_INCLUDE_DIR and ASE_LIB_DIR in the file
+"Makefile". ASE_INCLUDE_DIR should be set in such a way that the file 
+$ASE_INCLUDE_DIR/ase/AbsDistributionModel1D.hh
+can be found on your computer. ASE_LIB_DIR should be set in such a way
+that the file $ASE_LIB_DIR/libase.so can be found on your computer.
+Then run "make".
+
+If this does not work, you may have to regenerate the Python wrapper
+for your system. Make sure that you have a recent version of swig.
+Version 4.0.2 is known to work. You can get the latest version at
+https://www.swig.org/download.html
+
+Edit the variable ASE_INCLUDE_DIR in the file "Makefile.swig" (should
+be set in the same way as in the "Makefile"). Then run the following:
+
+make -f Makefile.swig distclean
+make -f Makefile.swig
+make
+
+The wrapper will not be installed in any special location on your
+computer. It will just reside in this directory. Because of this,
+you will need to add this directory to your PYTHONPATH environmental
+variable so that commands like "import asepy" in Python scripts
+will be correctly executed.
+
+Some examples on how to use the wrapper can be found in the directory
+"examples".

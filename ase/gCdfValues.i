@@ -1,0 +1,2 @@
+%constant double GCDF16 = 0.15865525393145705141;
+%constant double GCDF84 = 0.84134474606854294859;

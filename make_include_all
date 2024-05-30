@@ -1,0 +1,16 @@
+#!/bin/sh
+# The next line restarts using tclsh \
+exec tclsh "$0" ${1+"$@"}
+
+set files [glob "*.i"]
+
+set chan [open include_all.i "w"]
+foreach f $files {
+    if {![string equal $f "include_all.i"]} {
+        puts $chan "%include $f"
+    }
+}
+close $chan
+
+puts "Wrote file include_all.i"
+exit 0
