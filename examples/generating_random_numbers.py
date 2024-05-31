@@ -26,7 +26,7 @@ import asepy as ase
 # If you want MersenneTwister32 and MersenneTwister64 to generate
 # a fixed sequence of numbers (for repeatable program runs), give
 # their constructors a positive seed argument. Ideally, the seed
-# should be a large prime (but less than 2**31). To generate sequences,
+# should be a large prime (but less than 2**31). To generate sequences
 # that vary every time the program runs, use the seed value of 0
 # or omit the seed argument.
 seed = 224284387
