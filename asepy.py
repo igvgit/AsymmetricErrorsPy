@@ -2847,6 +2847,7 @@ _asepy.CubicHermiteInterpolatorEG_swigregister(CubicHermiteInterpolatorEG)
 class InterpolatedDensity1D(AbsLocationScaleFamily):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
+    isFullOPAT = _asepy.InterpolatedDensity1D_isFullOPAT
 
     def clone(self) -> "ase::InterpolatedDensity1D *":
         return _asepy.InterpolatedDensity1D_clone(self)
@@ -4268,6 +4269,7 @@ def densityIntegralGL(distro: "AbsDistributionModel1D", xmin: "double", xmax: "d
 class TabulatedDensity1D(AbsLocationScaleFamily):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
+    isFullOPAT = _asepy.TabulatedDensity1D_isFullOPAT
 
     def clone(self) -> "ase::TabulatedDensity1D *":
         return _asepy.TabulatedDensity1D_clone(self)

@@ -88238,6 +88238,8 @@ SWIG_init(void) {
   SWIG_Python_SetConstant(d, "UniformDistribution_isFullOPAT",SWIG_From_bool(static_cast< bool >(ase::UniformDistribution::isFullOPAT)));
   SWIG_Python_SetConstant(d, "ExponentialDistribution_isFullOPAT",SWIG_From_bool(static_cast< bool >(ase::ExponentialDistribution::isFullOPAT)));
   SWIG_Python_SetConstant(d, "LegendreDistro1D_isFullOPAT",SWIG_From_bool(static_cast< bool >(ase::LegendreDistro1D::isFullOPAT)));
+  SWIG_Python_SetConstant(d, "InterpolatedDensity1D_isFullOPAT",SWIG_From_bool(static_cast< bool >(ase::InterpolatedDensity1D::isFullOPAT)));
+  SWIG_Python_SetConstant(d, "TabulatedDensity1D_isFullOPAT",SWIG_From_bool(static_cast< bool >(ase::TabulatedDensity1D::isFullOPAT)));
   SWIG_Python_SetConstant(d, "GCDF16",SWIG_From_double(static_cast< double >(0.15865525393145705141)));
   SWIG_Python_SetConstant(d, "GCDF84",SWIG_From_double(static_cast< double >(0.84134474606854294859)));
   SWIG_Python_SetConstant(d, "TruncatedDistribution1D_isFullOPAT",SWIG_From_bool(static_cast< bool >(ase::TruncatedDistribution1D::isFullOPAT)));
