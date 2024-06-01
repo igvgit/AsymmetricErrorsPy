@@ -1,5 +1,5 @@
-# Edit the following two variables so that they describe where the "ase" package
-# is installed on your computer. You should be able to find the files
+# Edit the following two variables so that they describe where the "ase"
+# package is installed on your computer. You should be able to find the files
 # $ASE_INCLUDE_DIR/ase/AbsDistributionModel1D.hh and $ASE_LIB_DIR/libase.so
 ASE_INCLUDE_DIR = /usr/local/include
 ASE_LIB_DIR = /usr/local/lib
