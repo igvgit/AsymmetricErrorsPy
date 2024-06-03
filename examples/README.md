@@ -25,7 +25,7 @@ Example scripts showing how to combine results with pdf uncertainties.
 Example scripts showing how to combine results with log-likelihood
 (i.e., statistical) uncertainties.
 
-* [combination_of_logli_results_plot.py](./combination_of_logli_results_plot.py)
+* [combine_logli_results_plot.py](./combine_logli_results_plot.py)
 Example scripts showing how to plot input log-likelihood curves
 in a combination together with their combined result.
 
