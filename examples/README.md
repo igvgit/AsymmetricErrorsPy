@@ -35,8 +35,8 @@ Example scripts showing how to combine asymmetric log-likelihood errors.
 ## Which Models are Available?
 
 * [asepyDistributionModels.py](./asepyDistributionModels.py)
-This script prints the list of all distributions (pdfs) provided by
-the software.
+This script prints the list of all distribution (pdf) models
+provided by the software.
 
 * [asepyFromQuantilesModels.py](./asepyFromQuantilesModels.py)
 This script prints the list of all distributions models that can be
