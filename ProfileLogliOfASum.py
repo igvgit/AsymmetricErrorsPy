@@ -1,6 +1,39 @@
-import numpy as np
 import math
-from asepy_utils import findRootUsingBisections
+import numpy as np
+
+def findRootUsingBisections(fcn, rhs, x0, x1, tol):
+    if tol <= np.finfo(float).eps:
+        raise ValueError("Tolerance argument is too small")
+    f0 = fcn(x0)
+    if f0 == rhs:
+        return x0
+    f1 = fcn(x1)
+    if f1 == rhs:
+        return x1
+    increasing = f0 < rhs and rhs < f1
+    decreasing = f0 > rhs and rhs > f1
+    if not (increasing or decreasing):
+        raise ValueError("The root is not bounded by input arguments")
+    sqrtol = math.sqrt(tol)
+    maxiter = 2000
+    for it in range(maxiter):
+        xmid = (x0 + x1)/2.0
+        fmid = fcn(xmid)
+        if fmid == rhs:
+            return xmid
+        if abs(x0 - x1)/(abs(xmid) + sqrtol) <= tol:
+            return xmid
+        if increasing:
+            if fmid > rhs:
+                x1 = xmid
+            else:
+                x0 = xmid
+        else:
+            if fmid > rhs:
+                x0 = xmid
+            else:
+                x1 = xmid
+    raise RuntimeError("Iterations failed to converge")
 
 class ProfileLogliOfASum:
     def __init__(self, curves, damping=1.0, eps=None, maxiter=None):

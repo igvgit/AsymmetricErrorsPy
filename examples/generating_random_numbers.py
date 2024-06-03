@@ -23,7 +23,7 @@ import asepy as ase
 # 3) MersenneTwister64 is a wrapper for the standard C++ generator
 #    class std::mt19937_64.
 #
-# If you want MersenneTwister32 and MersenneTwister64 to generate
+# If you want MersenneTwister32 or MersenneTwister64 to generate
 # a fixed sequence of numbers (for repeatable program runs), give
 # their constructors a positive seed argument. Ideally, the seed
 # should be a large prime (but less than 2**31). To generate sequences
@@ -44,6 +44,7 @@ for i in range(5):
     print("Next random number is", distro.random(rng))
 
 # You can also call the "generate" method to make a sequence
-# of random numbers:
-seq = distro.generate(rng, 4)
+# of random numbers with desired length:
+nRandom = 4
+seq = distro.generate(rng, nRandom)
 print("Generated", len(seq), "random numbers at once:", seq)

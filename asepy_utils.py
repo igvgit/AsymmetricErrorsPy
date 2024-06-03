@@ -1,7 +1,8 @@
+import math
+import inspect
 import asepy as ase
 import numpy as np
-import inspect
-import math
+from ProfileLogliOfASum import ProfileLogliOfASum
 
 # Various scan... functions below can be used in two different ways:
 #
@@ -176,18 +177,33 @@ class DensityBasedLogli:
         return densityBasedLogliCurve(
             self.distroClass, mu, rightSigma, leftSigma, self.deltaLnL)
 
+# Utility finction for constructing errors for the
+# OPAT analysis. If both errors are negative, they
+# will be changed to positive and will be swapped
+# (this assumes a symmetric prior for the nuisance
+# parameter).
+def OPATError(posShift, negShift):
+    if posShift*negShift >= 0.0:
+        swap = posShift < 0.0 or negShift < 0.0
+    else:
+        swap = False
+    if swap:
+        return ase.AsymmetricEstimate(0.0, -negShift, -posShift, ase.P)
+    else:
+        return ase.AsymmetricEstimate(0.0, posShift, negShift, ase.P)
+
 # Q-Q plot of some distribution w.r.t. standard normal
 def qqmapFromStandardNormal(distro, points):
     g = ase.Gaussian(0.0, 1.0)
     return [distro.quantile(g.cdf(x)) for x in points]
 
-# Example code for adding two random variables using cumulants
+# Function for adding two random variables using cumulants
 def addTwoVarsUsingCumulants(distro1, distro2, classOut):
     cum1 = distributionCumulants(distro1, 3)
     cum2 = distributionCumulants(distro2, 3)
     return classOut(cum1 + cum2)
 
-# Example code for combining two pdf results
+# Function for combining two pdf results
 def combineTwoPdfResults(r1, class1, r2, class2, classOut, verbose=0):
     m1, v1, s1 = leadingPdfCumulants(r1, class1)
     if verbose > 1:
@@ -217,7 +233,7 @@ def combineTwoPdfResults(r1, class1, r2, class2, classOut, verbose=0):
 def combineTwoPdfResultsOneModel(r1, r2, classObj, verbose=0):
     return combineTwoPdfResults(r1, classObj, r2, classObj, classObj, verbose)
 
-# Example code for combining multiple pdf results
+# Function for combining multiple pdf results
 def combineMultiplePdfResults(results, classes, classOut):
     nResults = len(results)
     assert nResults > 0
@@ -257,7 +273,7 @@ def combineMultiplePdfResultsOneModel(results, classObj):
     assert nResults > 0
     return combineMultiplePdfResults(results, [classObj]*nResults, classObj)
 
-# Example code for combining two pdf errors
+# Function for combining two pdf errors
 def combineTwoPdfErrors(r1, class1, r2, class2, classOut, requireOPAT=False):
     m1, v1, s1 = leadingModelCumulants(r1, class1, requireOPAT)
     # print("r1 cumulants are:", m1, v1, s1)
@@ -280,7 +296,7 @@ def combineTwoPdfErrors(r1, class1, r2, class2, classOut, requireOPAT=False):
 def combineTwoPdfErrorsOneModel(r1, r2, classObj, requireOPAT=False):
     return combineTwoPdfErrors(r1, classObj, r2, classObj, classObj, requireOPAT)
 
-# Example code for combining multiple pdf errors
+# Function for combining multiple pdf errors
 def combineMultiplePdfErrors(results, classes, classOut, requireOPAT=False):
     nResults = len(results)
     assert nResults > 0
@@ -344,15 +360,49 @@ def combineMultipleLogliResults(results, classes):
         acc.accumulate(logliCurve(r, cl))
     return logliResult(acc)
 
-# Combine multiple likelihood results using the same model for everything
+# Combine multiple likelihood results using the same model for all of them
 def combineMultipleLogliResultsOneModel(results, classObj):
     nResults = len(results)
     assert nResults > 0
     return combineMultipleLogliResults(results, [classObj]*nResults)
 
+# Combine two likelihood errors
+def combineTwoLogliErrors(r1, class1, r2, class2):
+    return combineMultipleLogliErrors((r1, r2), (class1, class2))
+
+# Combine two likelihood errors using the same model for both
+def combineTwoLogliErrorsOneModel(r1, r2, classObj):
+    return combineMultipleLogliErrors((r1, r2), (classObj, classObj))
+
+# Combine multiple likelihood errors
+def combineMultipleLogliErrors(results, classes):
+    nResults = len(results)
+    assert nResults > 0
+    assert len(classes) == nResults
+    if nResults == 1:
+        return results[0]
+    curves = [logliCurve(r, c) for r, c in zip(results, classes)]
+    profileLogli = ProfileLogliOfASum(curves)
+    return logliResult(profileLogli)
+
+# Combine multiple likelihood errors using the same model for all of them
+def combineMultipleLogliErrorsOneModel(results, classObj):
+    nResults = len(results)
+    assert nResults > 0
+    return combineMultipleLogliErrors(results, [classObj]*nResults)
+
+# Symmetrize a likelihood result. The method is Bayesian. Symmetrization
+# is performed by assuming flat prior for the parameter and using Fechner
+# distribution to calculate the mean and the width.
 def symmetrizeLogliResult(r):
     c = logliCurve(r, ase.SymmetrizedParabola)
     return logliResult(c)
+
+# Symmetrize a pdf result by calculating cumulants of the given model
+def symmetrizePdfResult(r, pdfModel):
+    m1, v1, s1 = leadingPdfCumulants(r, pdfModel)
+    sigma = math.sqrt(v1)
+    return ase.AsymmetricEstimate(m1, sigma, sigma, ase.P)
 
 # List all distribution models that can be used to construct log-likelihood
 # curves using the "densityBasedLogliCurve" function in this module.
@@ -415,36 +465,34 @@ def fromQuantilesPdfs():
                 classes.append(cl)
     return classes
 
-def findRootUsingBisections(fcn, rhs, x0, x1, tol):
-    if tol <= np.finfo(float).eps:
-        raise ValueError("Tolerance argument is too small")
-    f0 = fcn(x0)
-    if f0 == rhs:
-        return x0
-    f1 = fcn(x1)
-    if f1 == rhs:
-        return x1
-    increasing = f0 < rhs and rhs < f1
-    decreasing = f0 > rhs and rhs > f1
-    if not (increasing or decreasing):
-        raise ValueError("The root is not bounded by input arguments")
-    sqrtol = math.sqrt(tol)
-    maxiter = 2000
-    for it in range(maxiter):
-        xmid = (x0 + x1)/2.0
-        fmid = fcn(xmid)
-        if fmid == rhs:
-            return xmid
-        if abs(x0 - x1)/(abs(xmid) + sqrtol) <= tol:
-            return xmid
-        if increasing:
-            if fmid > rhs:
-                x1 = xmid
-            else:
-                x0 = xmid
-        else:
-            if fmid > rhs:
-                x0 = xmid
-            else:
-                x1 = xmid
-    raise RuntimeError("Iterations failed to converge")
+def parse_distro_str(s):
+    elems = s.split()
+    return parse_distro(elems[0], elems[1:])
+
+# Parse a pdf command line specification
+def parse_distro(classname, strings):
+    cl = getattr(ase, classname)
+    if classname == "SymmetricBetaGaussian":
+        assert len(strings) == 5
+        arglist = [float(s) for s in strings]
+        arglist[3] = int(arglist[3])
+        return cl(*arglist)
+    elif classname == "TruncatedDistribution1D":
+        xmin = float(strings[0])
+        xmax = float(strings[1])
+        trunc = parse_distro(strings[2], strings[3:])
+        return cl(trunc, xmin, xmax)
+    elif classname == "MixtureModel1D":
+        # Expect even number of arguments:
+        # float weights followed by specs of other
+        # distros as single strings
+        assert len(strings) % 2 == 0
+        mix = cl()
+        for wstr, spec in zip(strings[0::2], strings[1::2]):
+            w = float(wstr)
+            d = parse_distro_str(spec)
+            mix.add(d, w)
+        return mix
+    else:
+        arglist = [float(s) for s in strings]
+        return cl(*arglist)

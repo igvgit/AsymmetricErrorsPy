@@ -23,43 +23,9 @@ __version__="0.5"
 __date__ ="May 30 2024"
 
 import asepy as ase
-import numpy as np
 import matplotlib.pyplot as plt
 import sys
-from asepy_utils import scanDensity, scanCdf
-
-def parse_distro_str(s):
-    elems = s.split()
-    return parse_distro(elems[0], elems[1:])
-
-
-def parse_distro(classname, strings):
-    cl = getattr(ase, classname)
-    if classname == "SymmetricBetaGaussian":
-        assert len(strings) == 5
-        arglist = [float(s) for s in strings]
-        arglist[3] = int(arglist[3])
-        return cl(*arglist)
-    elif classname == "TruncatedDistribution1D":
-        xmin = float(strings[0])
-        xmax = float(strings[1])
-        trunc = parse_distro(strings[2], strings[3:])
-        return cl(trunc, xmin, xmax)
-    elif classname == "MixtureModel1D":
-        # Expect even number of arguments:
-        # float weights followed by specs of other
-        # distros as single strings
-        assert len(strings) % 2 == 0
-        mix = cl()
-        for wstr, spec in zip(strings[0::2], strings[1::2]):
-            w = float(wstr)
-            d = parse_distro_str(spec)
-            mix.add(d, w)
-        return mix
-    else:
-        arglist = [float(s) for s in strings]
-        return cl(*arglist)
-
+from asepy_utils import parse_distro, scanDensity, scanCdf
 
 def make_plot(classname, xmin, xmax, arglist):
     # Some hadwired parameters
@@ -100,7 +66,6 @@ def make_plot(classname, xmin, xmax, arglist):
     fig.set_size_inches((10, 5))
     fig.tight_layout()
     plt.show()
-
 
 def main(argv):
     # Parse command line options

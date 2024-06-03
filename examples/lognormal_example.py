@@ -45,9 +45,9 @@ plt.show()
 xmin = -3.0
 xmax = 3.0
 z = np.linspace(xmin, xmax, nscan)
-y = qqmapFromStandardNormal(distro, z)
+x = qqmapFromStandardNormal(distro, z)
 
-plt.plot(z, y)
+plt.plot(z, x)
 plt.xlabel('z')
 plt.ylabel('x')
 plt.title('Log-normal Transform')

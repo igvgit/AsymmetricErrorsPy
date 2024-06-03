@@ -4,6 +4,11 @@ Usage: plot_likelihood_derivative.py order classname mu rightSigma leftSigma
 
 The "order" argument specifies the order of log-likelihood derivative.
 Must be 0, 1, or 2.
+
+Examples:
+
+plot_likelihood_derivative.py 1 MoldedDoubleQuintic 1.0 2.5 1.3
+plot_likelihood_derivative.py 2 ConservativeSigma10 1.0 2.0 3.0
 """
 
 __author__="Igor Volobouev (i.volobouev@ttu.edu)"

@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """
 Usage: plot_likelihood_curve.py classname mu rightSigma leftSigma
+
+Examples:
+
+plot_likelihood_curve.py MoldedDoubleQuintic 1.0 2.5 1.3
+plot_likelihood_curve.py ConservativeSigma10 1.0 2.0 3.0
 """
 
 __author__="Igor Volobouev (i.volobouev@ttu.edu)"
-__version__="0.2"
-__date__ ="Feb 04 2024"
+__version__="0.3"
+__date__ ="June 3 2024"
 
 import asepy as ase
 import numpy as np
@@ -29,7 +34,7 @@ def make_plot(classname, mu, rightSigma, leftSigma):
     coords, values = scanLogLikelihood(c, xmin, xmax, nscan)
     plt.plot(coords, values)
     plt.xlabel('Parameter')
-    plt.ylabel('Log-Likelihood')
+    plt.ylabel('Log-likelihood')
     #
     title = "{}({}, {}, {})".format(classname, mu, rightSigma, leftSigma)
     plt.suptitle(title)
