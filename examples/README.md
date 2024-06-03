@@ -1,7 +1,11 @@
 The scripts in this directory present the Python API of the code
 accompanying the "Asymmetric Errors" paper in a tutorial fashion.
+Read them, run them, modify them, and see what happens.
 
 ## Basic Top-level API
+
+I recommend exploring the basic usage of the package API in the
+following order:
 
 * [representing_results.py](./representing_results.py)
 This script demonstrates how results with asymmetric errors are
