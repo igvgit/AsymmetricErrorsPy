@@ -91,8 +91,8 @@ If you run this script without any command line arguments, it prints
 its usage instructions.
 
 * [plot_transform.py](./plot_transform.py)
-This example shows how to plot a transformation (OPAT curve, also known
-as the Q-Q plot) which transforms the standard standard normal into
+This example shows how to plot a function (OPAT curve, also known
+as the Q-Q plot) which transforms the standard normal into
 the desired distribution. If you run this script without any command
 line arguments, it prints its usage instructions.
 
