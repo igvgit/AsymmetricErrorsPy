@@ -2,7 +2,7 @@
 Python API for modeling asymmetric errors. This code accompanies the
 "Asymmetric Errors" paper by R. Barlow, A.R. Brazzale, and I. Volobouev.
 To install this package on your computer, download or clone the repository
-or the latest package release from GitHub (see
+or the latest package release from GitHub (check
 [these tips](https://zapier.com/blog/how-to-download-from-github/)
 if you are not sure how to do that),
 unpack the downloaded archive if necessary, and then follow the instructions
@@ -16,7 +16,7 @@ mathematical descriptions for a number of probability distributions
 that can be used to model asymmetric pdf (i.e., systematic) errors.
 In this package, these distributions are implemented with a number
 of classes, all of them inheriting their interface from the
-[AbsDistributionModel1D](https://github.com/igvgit/AsymmetricErrors/ase/AbsDistributionModel1D.hh)
+[AbsDistributionModel1D](https://github.com/igvgit/AsymmetricErrors/blob/main/ase/AbsDistributionModel1D.hh)
 base class. The following table lists classes
 corresponding to various Appendix A subsections:
 | Appendix A Subsection                |  Class Name           |
@@ -32,8 +32,9 @@ corresponding to various Appendix A subsections:
 | The Skew Normal                      | SkewNormal            |
 | The Johnson system                   | JohnsonSystem         |
 | The Log-normal                       | LogNormal             |
+
 Declarations and constructor signatures for these classes can be found in the
-[DistributionModels1D.hh](https://github.com/igvgit/AsymmetricErrors/ase/DistributionModels1D.hh)
+[DistributionModels1D.hh](https://github.com/igvgit/AsymmetricErrors/blob/main/ase/DistributionModels1D.hh)
 header file (Python and C++ constructor signatures are identical).
 
 The creation methods of the "SymmetricBetaGaussian" model have
@@ -45,9 +46,9 @@ Here, "P" in the class name refers to the value of _p_ and "N" refers
 to the value of _h_*10. Thus, for the "SymmetricBetaGaussian_2_15"
 model, _p_ = 2 and _h_ = 1.5.
 
-A number of models which are not necessarily useful for representing
-asymmetric errors but could be employed for other purposes are also
-included. Here is a table of such models, current at the time of this writing:
+The package also includes a number of models which are not necessarily useful for representing
+asymmetric errors but could be employed for other purposes.
+Here is a table of such models, current at the time of this writing:
 |  Class Name             |  Decsription     |
 |-------------------------|------------------|
 | EmpiricalDistribution   | Empirical distribution corresponding to a sample of unweighted points |
@@ -71,7 +72,7 @@ mathematical descriptions for a number of log-likelihood
 curves that can be used to model asymmetric statistical errors.
 In this package, these curves are implemented with a number
 of classes, all of them inheriting their interface from the
-[AbsLogLikelihoodCurve](https://github.com/igvgit/AsymmetricErrors/ase/AbsLogLikelihoodCurve.hh)
+[AbsLogLikelihoodCurve](https://github.com/igvgit/AsymmetricErrors/blob/main/ase/AbsLogLikelihoodCurve.hh)
 base class. The following table lists classes
 corresponding to various Appendix B subsections:
 | Appendix B Subsection                |  Class Name(s)        |
