@@ -3,7 +3,7 @@ utilities for the "ase" (Asymmetric Errors) package on your computer.
 
 Naturally, you have to install the "ase" package first. Get it from
 https://github.com/igvgit/AsymmetricErrors
-There, you will find a file called ase-X.X.tar.gz (where X.X stands
+There, you will find a file called ase-X.Y.tar.gz (where X.Y stands
 for the version number, 0.7 at the time of this writing). Download
 and install that.
 
