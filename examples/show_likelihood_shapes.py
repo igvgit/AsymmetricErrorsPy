@@ -16,6 +16,8 @@ Examples:
 ./show_likelihood_shapes.py 2 none VariableSigmaLogli VariableVarianceLogli PDGLogli MoldedDoubleQuintic MoldedCubicLogSigma
 
 ./show_likelihood_shapes.py 0.5 none LogLogisticBeta SkewNormal SymmetricBetaGaussian_2_20
+
+./show_likelihood_shapes.py 2 none ConservativeSigma05 ConservativeSigma10 ConservativeSigma15 ConservativeSigma20 ConservativeSigmaMax
 """
 
 __author__="Igor Volobouev (i.volobouev@ttu.edu)"
