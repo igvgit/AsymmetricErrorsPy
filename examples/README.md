@@ -107,11 +107,11 @@ If you run this script without any command line arguments, it prints
 its usage instructions.
 
 * [symbeta_gauss_densities.py](./symbeta_gauss_densities.py)
-This scripts plots symmetric beta Gaussian densities corresponding to
+This script plots symmetric beta Gaussian densities corresponding to
 a number of different shape parameters.
 
 * [symbeta_transforms.py](./symbeta_transforms.py)
-This scripts shows variable transforms used to generate symmetric beta
+This script shows variable transforms used to generate symmetric beta
 Gaussian distributions for a number of different shape parameters.
 
 ## Constructing Pdfs and Log-likelihoods
@@ -146,5 +146,5 @@ This script demonstrates how the fidelity of mathematical function approximation
 of points used.
 
 * [generating_random_numbers.py](./generating_random_numbers.py)
-This scripts shows how to generate random numbers according to a given
+This script shows how to generate random numbers according to a given
 probability distribution.
