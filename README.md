@@ -85,7 +85,7 @@ corresponding to various Appendix B subsections:
 | The interpolated 7th degree polynomial | Interpolated7thDegree |
 | The double quartic | SimpleDoubleQuartic, MoldedDoubleQuartic |
 | The double quintic | SimpleDoubleQuintic, MoldedDoubleQuintic |
-| The conservative spline | ConservativeSigma05, ConservativeSigma10, ConservativeSigma15, ConservativeSigma20, ConservativeSigmaMax |
+| The conservative spline | ConservativeSpline, ConservativeSigma05, ConservativeSigma10, ConservativeSigma15, ConservativeSigma20, ConservativeSigmaMax |
 | The log logistic-beta | LogLogisticBeta |
 | The logarithmic | LogarithmicLogli |
 | The generalised Poisson | GeneralisedPoisson |
