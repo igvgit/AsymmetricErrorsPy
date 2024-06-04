@@ -12,25 +12,25 @@ This script demonstrates how results with asymmetric errors are
 represented in the software.
 
 * [combine_two_pdf_errors.py](./combine_two_pdf_errors.py)
-Example scripts illustrating the utility functions that can be used to combine
+Example script illustrating the utility functions that can be used to combine
 two pdf (i.e., systematic) uncertainties.
 
 * [combine_multiple_pdf_errors.py](./combine_multiple_pdf_errors.py)
-Example scripts showing how to combine multiple pdf (i.e., systematic) uncertainties.
+Example script showing how to combine multiple pdf (i.e., systematic) uncertainties.
 
 * [combine_pdf_results.py](./combine_pdf_results.py)
-Example scripts showing how to combine results with pdf uncertainties.
+Example script showing how to combine results with pdf uncertainties.
 
 * [combine_logli_results.py](./combine_logli_results.py)
-Example scripts showing how to combine results with log-likelihood
+Example script showing how to combine results with log-likelihood
 (i.e., statistical) uncertainties.
 
 * [combine_logli_results_plot.py](./combine_logli_results_plot.py)
-Example scripts showing how to plot input log-likelihood curves
+Example script showing how to plot input log-likelihood curves
 in a combination together with their combined result.
 
 * [combine_logli_errors.py](./combine_logli_errors.py)
-Example scripts showing how to combine asymmetric log-likelihood errors.
+Example script showing how to combine asymmetric log-likelihood errors.
 
 ## Which Models are Available?
 
