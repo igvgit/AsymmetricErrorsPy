@@ -49,7 +49,7 @@ model, _p_ = 2 and _h_ = 1.5.
 The package also includes a number of models which are not necessarily useful for representing
 asymmetric errors but could be employed for other purposes.
 Here is a table of such models, current at the time of this writing:
-|  Class Name             |  Decsription     |
+|  Class Name             |  Description     |
 |-------------------------|------------------|
 | EmpiricalDistribution   | Empirical distribution corresponding to a sample of unweighted points |
 | ExponentialDistribution | The exponential distribution |
@@ -110,7 +110,7 @@ in the "examples" directory to print the current list of implemented
 log-likelihood models.
 
 Special log-likelihood models implemented in the package include
-|  Class Name                |  Decsription     |
+|  Class Name                |  Description     |
 |----------------------------|------------------|
 | CubicHermiteInterpolatorEG | A discretized log-likelihood curve interpolated by cubic Hermite splines |
 | PoissonLogli               | Log-likelihood for the parameter of the Poisson distribution |
