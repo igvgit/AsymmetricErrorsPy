@@ -85,7 +85,7 @@ corresponding to various Appendix B subsections:
 | The interpolated 7th degree polynomial | Interpolated7thDegree |
 | The double quartic | SimpleDoubleQuartic, MoldedDoubleQuartic |
 | The double quintic | SimpleDoubleQuintic, MoldedDoubleQuintic |
-| The conservative spline | ConservativeSigma... |
+| The conservative spline | ConservativeSigma05, ConservativeSigma10, ConservativeSigma15, ConservativeSigma20, ConservativeSigmaMax |
 | The log logistic-beta | LogLogisticBeta |
 | The logarithmic | LogarithmicLogli |
 | The generalised Poisson | GeneralisedPoisson |
@@ -98,6 +98,23 @@ corresponding to various Appendix B subsections:
 | The Edgeworth expansion | Not implemented |
 | The skew normal | DistributionLogli(SkewNormal) |
 
+In addition to the skew-normal distribution, a number of other
+distribution models can be used for building log-likelihood curves
+by calculating the log of the density. The method used to
+construct such log-likelihoods is described in the the script
+[constructing_likelihoods.py](./examples/constructing_likelihoods.py)
+found in the "examples" directory.
+
 Run the script [asepyLogliModels.py](./examples/asepyLogliModels.py)
 in the "examples" directory to print the current list of implemented
 log-likelihood models.
+
+Special log-likelihood models implemented in the package include
+|  Class Name                |  Decsription     |
+|----------------------------|------------------|
+| CubicHermiteInterpolatorEG | A discretized log-likelihood curve interpolated by cubic Hermite splines |
+| PoissonLogli               | Log-likelihood for the parameter of the Poisson distribution |
+| SymmetrizedParabola        | Log-likelihood to use for Bayesian symmetrization of statistical uncertainties |
+
+These models might not have standard constructors and could
+be skipped in the output of the "asepyLogliModels.py" script.
