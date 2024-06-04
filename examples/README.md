@@ -101,7 +101,7 @@ This script demonstrates a transform used to construct the railway Gaussian
 distribution, together with its derivatives.
 
 * [show_likelihood_shapes.py](./show_likelihood_shapes.py)
-This script allows you to plot a mumber of log-likelihood models
+This script allows you to plot a number of log-likelihood models
 simultaneously, together with their first and second derivatives.
 If you run this script without any command line arguments, it prints
 its usage instructions.
