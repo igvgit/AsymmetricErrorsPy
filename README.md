@@ -79,6 +79,7 @@ corresponding to various Appendix B subsections:
 | ------------------------------------ | --------------------- |
 | The cubic | TruncatedCubicLogli |
 | The broken parabola | BrokenParabola |
+| The symmetrized parabola | SymmetrizedParabola |
 | The constrained quartic | ConstrainedQuartic |
 | The molded quartic | MoldedQuartic |
 | The matched quintic | MatchedQuintic  |
@@ -114,7 +115,6 @@ Special log-likelihood models implemented in the package include
 |----------------------------|------------------|
 | CubicHermiteInterpolatorEG | A discretized log-likelihood curve interpolated by cubic Hermite splines |
 | PoissonLogli               | Log-likelihood for the parameter of the Poisson distribution |
-| SymmetrizedParabola        | Log-likelihood to use for Bayesian symmetrization of statistical uncertainties |
 
 These models might not have standard constructors and could
 be skipped in the output of the "asepyLogliModels.py" script.
