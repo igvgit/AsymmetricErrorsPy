@@ -4,6 +4,9 @@ import asepy as ase
 import numpy as np
 from ProfileLogliOfASum import ProfileLogliOfASum
 
+class UncertaintyTypeError(Exception):
+    pass
+
 # Various scan... functions below can be used in two different ways:
 #
 # scan... object xmin xmax npoints
@@ -112,13 +115,15 @@ def distortedNumericCumulants(distro, quadPoints):
     return gaussianRatioCumulants(distro, quadPoints, mu, sigma)
 
 def leadingPdfCumulants(e, classObj):
-    assert e.errorType() == ase.P
+    if e.errorType() != ase.P:
+        raise UncertaintyTypeError("Pdf uncertainty expected")
     distro = classObj.fromQuantiles(e.location(), e.sigmaPlus(), e.sigmaMinus())
     return distributionCumulants(distro, 3)
 
 def leadingOPATCumulants(e, classObj):
-    assert e.errorType() == ase.P
-    assert classObj.isFullOPAT
+    if e.errorType() != ase.P:
+        raise UncertaintyTypeError("Pdf uncertainty expected")
+    assert classObj.isFullOPAT, "Model must support OPAT"
     distro = classObj(e.location(), e.sigmaPlus(), e.sigmaMinus())
     return distributionCumulants(distro, 3)
 
@@ -335,7 +340,8 @@ def logliResult(curve):
                                   curve.sigmaMinus(), ase.L)
 
 def logliCurve(result, classObj):
-    assert result.errorType() == ase.L
+    if result.errorType() != ase.L:
+        raise UncertaintyTypeError("Likelihood uncertainty expected")
     return classObj(result.location(), result.sigmaPlus(), result.sigmaMinus())
 
 # Combine two likelihood results

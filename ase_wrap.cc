@@ -6362,6 +6362,21 @@ SWIGINTERN bool ase_AsymmetricEstimate___eq__(ase::AsymmetricEstimate const *sel
 SWIGINTERN bool ase_AsymmetricEstimate___ne__(ase::AsymmetricEstimate const *self,ase::AsymmetricEstimate const &other){
              return *self != other;
          }
+SWIGINTERN ase::AsymmetricEstimate ase_AsymmetricEstimate___mul__(ase::AsymmetricEstimate const *self,double const &r){
+             return *self * r;
+         }
+SWIGINTERN ase::AsymmetricEstimate ase_AsymmetricEstimate___rmul__(ase::AsymmetricEstimate const *self,double const &r){
+             return *self * r;
+         }
+SWIGINTERN ase::AsymmetricEstimate ase_AsymmetricEstimate___add__(ase::AsymmetricEstimate const *self,double const &r){
+             return *self + r;
+         }
+SWIGINTERN ase::AsymmetricEstimate ase_AsymmetricEstimate___radd__(ase::AsymmetricEstimate const *self,double const &r){
+             return *self + r;
+         }
+SWIGINTERN ase::AsymmetricEstimate ase_AsymmetricEstimate___sub__(ase::AsymmetricEstimate const *self,double const &r){
+             return *self - r;
+         }
 
 #include "ase/DistributionModel1DCopy.hh"
 
@@ -22423,6 +22438,570 @@ SWIGINTERN PyObject *_wrap_PyFunctor1___call__(PyObject *SWIGUNUSEDPARM(self), P
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findRoot__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  asepy::PyFunctor1 *arg1 = (asepy::PyFunctor1 *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  std::pair< bool,double > result;
+  
+  if ((nobjs < 5) || (nobjs > 5)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_asepy__PyFunctor1, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PyFunctor1_findRoot" "', argument " "1"" of type '" "asepy::PyFunctor1 const *""'"); 
+  }
+  arg1 = reinterpret_cast< asepy::PyFunctor1 * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PyFunctor1_findRoot" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "PyFunctor1_findRoot" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(swig_obj[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "PyFunctor1_findRoot" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(swig_obj[4], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "PyFunctor1_findRoot" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  {
+    try {
+      result = ((asepy::PyFunctor1 const *)arg1)->findRoot(arg2,arg3,arg4,arg5);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = swig::from(static_cast< std::pair< bool,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findRoot__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  asepy::PyFunctor1 *arg1 = (asepy::PyFunctor1 *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  std::pair< bool,double > result;
+  
+  if ((nobjs < 4) || (nobjs > 4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_asepy__PyFunctor1, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PyFunctor1_findRoot" "', argument " "1"" of type '" "asepy::PyFunctor1 const *""'"); 
+  }
+  arg1 = reinterpret_cast< asepy::PyFunctor1 * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PyFunctor1_findRoot" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "PyFunctor1_findRoot" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(swig_obj[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "PyFunctor1_findRoot" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  {
+    try {
+      result = ((asepy::PyFunctor1 const *)arg1)->findRoot(arg2,arg3,arg4);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = swig::from(static_cast< std::pair< bool,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findRoot(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[6] = {
+    0
+  };
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args, "PyFunctor1_findRoot", 0, 5, argv))) SWIG_fail;
+  --argc;
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_asepy__PyFunctor1, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_PyFunctor1_findRoot__SWIG_1(self, argc, argv);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_asepy__PyFunctor1, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              return _wrap_PyFunctor1_findRoot__SWIG_0(self, argc, argv);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'PyFunctor1_findRoot'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    asepy::PyFunctor1::findRoot(double const,double const,double const,double) const\n"
+    "    asepy::PyFunctor1::findRoot(double const,double const,double const) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findMinimum__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  asepy::PyFunctor1 *arg1 = (asepy::PyFunctor1 *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  std::pair< bool,double > result;
+  
+  if ((nobjs < 5) || (nobjs > 5)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_asepy__PyFunctor1, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PyFunctor1_findMinimum" "', argument " "1"" of type '" "asepy::PyFunctor1 const *""'"); 
+  }
+  arg1 = reinterpret_cast< asepy::PyFunctor1 * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PyFunctor1_findMinimum" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "PyFunctor1_findMinimum" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(swig_obj[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "PyFunctor1_findMinimum" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(swig_obj[4], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "PyFunctor1_findMinimum" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  {
+    try {
+      result = ((asepy::PyFunctor1 const *)arg1)->findMinimum(arg2,arg3,arg4,arg5);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = swig::from(static_cast< std::pair< bool,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findMinimum__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  asepy::PyFunctor1 *arg1 = (asepy::PyFunctor1 *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  std::pair< bool,double > result;
+  
+  if ((nobjs < 4) || (nobjs > 4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_asepy__PyFunctor1, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PyFunctor1_findMinimum" "', argument " "1"" of type '" "asepy::PyFunctor1 const *""'"); 
+  }
+  arg1 = reinterpret_cast< asepy::PyFunctor1 * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PyFunctor1_findMinimum" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "PyFunctor1_findMinimum" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(swig_obj[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "PyFunctor1_findMinimum" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  {
+    try {
+      result = ((asepy::PyFunctor1 const *)arg1)->findMinimum(arg2,arg3,arg4);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = swig::from(static_cast< std::pair< bool,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findMinimum(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[6] = {
+    0
+  };
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args, "PyFunctor1_findMinimum", 0, 5, argv))) SWIG_fail;
+  --argc;
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_asepy__PyFunctor1, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_PyFunctor1_findMinimum__SWIG_1(self, argc, argv);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_asepy__PyFunctor1, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              return _wrap_PyFunctor1_findMinimum__SWIG_0(self, argc, argv);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'PyFunctor1_findMinimum'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    asepy::PyFunctor1::findMinimum(double const,double const,double const,double) const\n"
+    "    asepy::PyFunctor1::findMinimum(double const,double const,double const) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findMaximum__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  asepy::PyFunctor1 *arg1 = (asepy::PyFunctor1 *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  std::pair< bool,double > result;
+  
+  if ((nobjs < 5) || (nobjs > 5)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_asepy__PyFunctor1, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PyFunctor1_findMaximum" "', argument " "1"" of type '" "asepy::PyFunctor1 const *""'"); 
+  }
+  arg1 = reinterpret_cast< asepy::PyFunctor1 * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PyFunctor1_findMaximum" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "PyFunctor1_findMaximum" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(swig_obj[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "PyFunctor1_findMaximum" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(swig_obj[4], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "PyFunctor1_findMaximum" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  {
+    try {
+      result = ((asepy::PyFunctor1 const *)arg1)->findMaximum(arg2,arg3,arg4,arg5);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = swig::from(static_cast< std::pair< bool,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findMaximum__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  asepy::PyFunctor1 *arg1 = (asepy::PyFunctor1 *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  std::pair< bool,double > result;
+  
+  if ((nobjs < 4) || (nobjs > 4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_asepy__PyFunctor1, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PyFunctor1_findMaximum" "', argument " "1"" of type '" "asepy::PyFunctor1 const *""'"); 
+  }
+  arg1 = reinterpret_cast< asepy::PyFunctor1 * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PyFunctor1_findMaximum" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "PyFunctor1_findMaximum" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(swig_obj[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "PyFunctor1_findMaximum" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  {
+    try {
+      result = ((asepy::PyFunctor1 const *)arg1)->findMaximum(arg2,arg3,arg4);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = swig::from(static_cast< std::pair< bool,double > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PyFunctor1_findMaximum(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[6] = {
+    0
+  };
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args, "PyFunctor1_findMaximum", 0, 5, argv))) SWIG_fail;
+  --argc;
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_asepy__PyFunctor1, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_PyFunctor1_findMaximum__SWIG_1(self, argc, argv);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_asepy__PyFunctor1, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_double(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_double(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_double(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_double(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              return _wrap_PyFunctor1_findMaximum__SWIG_0(self, argc, argv);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_Python_RaiseOrModifyTypeError("Wrong number or type of arguments for overloaded function 'PyFunctor1_findMaximum'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    asepy::PyFunctor1::findMaximum(double const,double const,double const,double) const\n"
+    "    asepy::PyFunctor1::findMaximum(double const,double const,double const) const\n");
+  return 0;
 }
 
 
@@ -66856,6 +67435,64 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TruncatedCubicLogli_alpha(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::TruncatedCubicLogli *arg1 = (ase::TruncatedCubicLogli *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__TruncatedCubicLogli, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TruncatedCubicLogli_alpha" "', argument " "1"" of type '" "ase::TruncatedCubicLogli const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::TruncatedCubicLogli * >(argp1);
+  {
+    try {
+      result = (double)((ase::TruncatedCubicLogli const *)arg1)->alpha();
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TruncatedCubicLogli_beta(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::TruncatedCubicLogli *arg1 = (ase::TruncatedCubicLogli *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__TruncatedCubicLogli, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TruncatedCubicLogli_beta" "', argument " "1"" of type '" "ase::TruncatedCubicLogli const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::TruncatedCubicLogli * >(argp1);
+  {
+    try {
+      result = (double)((ase::TruncatedCubicLogli const *)arg1)->beta();
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *TruncatedCubicLogli_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!SWIG_Python_UnpackTuple(args, "swigregister", 1, 1, &obj)) return NULL;
@@ -76501,6 +77138,68 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_AsymmetricEstimate___neg__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  SwigValueWrapper< ase::AsymmetricEstimate > result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__AsymmetricEstimate, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AsymmetricEstimate___neg__" "', argument " "1"" of type '" "ase::AsymmetricEstimate const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::AsymmetricEstimate * >(argp1);
+  {
+    try {
+      result = ((ase::AsymmetricEstimate const *)arg1)->operator -();
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new ase::AsymmetricEstimate(static_cast< const ase::AsymmetricEstimate& >(result))), SWIGTYPE_p_ase__AsymmetricEstimate, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_AsymmetricEstimate___pos__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  SwigValueWrapper< ase::AsymmetricEstimate > result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__AsymmetricEstimate, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AsymmetricEstimate___pos__" "', argument " "1"" of type '" "ase::AsymmetricEstimate const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::AsymmetricEstimate * >(argp1);
+  {
+    try {
+      result = ((ase::AsymmetricEstimate const *)arg1)->operator +();
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new ase::AsymmetricEstimate(static_cast< const ase::AsymmetricEstimate& >(result))), SWIGTYPE_p_ase__AsymmetricEstimate, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
 SWIGINTERN PyObject *_wrap_AsymmetricEstimate___repr__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
@@ -76604,6 +77303,206 @@ SWIGINTERN PyObject *_wrap_AsymmetricEstimate___ne__(PyObject *SWIGUNUSEDPARM(se
     }
   }
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_AsymmetricEstimate___mul__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
+  double *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double temp2 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  SwigValueWrapper< ase::AsymmetricEstimate > result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "AsymmetricEstimate___mul__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__AsymmetricEstimate, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AsymmetricEstimate___mul__" "', argument " "1"" of type '" "ase::AsymmetricEstimate const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::AsymmetricEstimate * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AsymmetricEstimate___mul__" "', argument " "2"" of type '" "double""'");
+  } 
+  temp2 = static_cast< double >(val2);
+  arg2 = &temp2;
+  {
+    try {
+      result = ase_AsymmetricEstimate___mul__((ase::AsymmetricEstimate const *)arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new ase::AsymmetricEstimate(static_cast< const ase::AsymmetricEstimate& >(result))), SWIGTYPE_p_ase__AsymmetricEstimate, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_AsymmetricEstimate___rmul__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
+  double *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double temp2 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  SwigValueWrapper< ase::AsymmetricEstimate > result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "AsymmetricEstimate___rmul__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__AsymmetricEstimate, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AsymmetricEstimate___rmul__" "', argument " "1"" of type '" "ase::AsymmetricEstimate const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::AsymmetricEstimate * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AsymmetricEstimate___rmul__" "', argument " "2"" of type '" "double""'");
+  } 
+  temp2 = static_cast< double >(val2);
+  arg2 = &temp2;
+  {
+    try {
+      result = ase_AsymmetricEstimate___rmul__((ase::AsymmetricEstimate const *)arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new ase::AsymmetricEstimate(static_cast< const ase::AsymmetricEstimate& >(result))), SWIGTYPE_p_ase__AsymmetricEstimate, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_AsymmetricEstimate___add__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
+  double *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double temp2 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  SwigValueWrapper< ase::AsymmetricEstimate > result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "AsymmetricEstimate___add__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__AsymmetricEstimate, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AsymmetricEstimate___add__" "', argument " "1"" of type '" "ase::AsymmetricEstimate const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::AsymmetricEstimate * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AsymmetricEstimate___add__" "', argument " "2"" of type '" "double""'");
+  } 
+  temp2 = static_cast< double >(val2);
+  arg2 = &temp2;
+  {
+    try {
+      result = ase_AsymmetricEstimate___add__((ase::AsymmetricEstimate const *)arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new ase::AsymmetricEstimate(static_cast< const ase::AsymmetricEstimate& >(result))), SWIGTYPE_p_ase__AsymmetricEstimate, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_AsymmetricEstimate___radd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
+  double *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double temp2 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  SwigValueWrapper< ase::AsymmetricEstimate > result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "AsymmetricEstimate___radd__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__AsymmetricEstimate, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AsymmetricEstimate___radd__" "', argument " "1"" of type '" "ase::AsymmetricEstimate const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::AsymmetricEstimate * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AsymmetricEstimate___radd__" "', argument " "2"" of type '" "double""'");
+  } 
+  temp2 = static_cast< double >(val2);
+  arg2 = &temp2;
+  {
+    try {
+      result = ase_AsymmetricEstimate___radd__((ase::AsymmetricEstimate const *)arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new ase::AsymmetricEstimate(static_cast< const ase::AsymmetricEstimate& >(result))), SWIGTYPE_p_ase__AsymmetricEstimate, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
+SWIGINTERN PyObject *_wrap_AsymmetricEstimate___sub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ase::AsymmetricEstimate *arg1 = (ase::AsymmetricEstimate *) 0 ;
+  double *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double temp2 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  SwigValueWrapper< ase::AsymmetricEstimate > result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "AsymmetricEstimate___sub__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_ase__AsymmetricEstimate, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AsymmetricEstimate___sub__" "', argument " "1"" of type '" "ase::AsymmetricEstimate const *""'"); 
+  }
+  arg1 = reinterpret_cast< ase::AsymmetricEstimate * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AsymmetricEstimate___sub__" "', argument " "2"" of type '" "double""'");
+  } 
+  temp2 = static_cast< double >(val2);
+  arg2 = &temp2;
+  {
+    try {
+      result = ase_AsymmetricEstimate___sub__((ase::AsymmetricEstimate const *)arg1,(double const &)*arg2);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_NewPointerObj((new ase::AsymmetricEstimate(static_cast< const ase::AsymmetricEstimate& >(result))), SWIGTYPE_p_ase__AsymmetricEstimate, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   PyErr_Clear();
@@ -84246,6 +85145,9 @@ static PyMethodDef SwigMethods[] = {
 	 { "new_PyFunctor1", _wrap_new_PyFunctor1, METH_O, NULL},
 	 { "delete_PyFunctor1", _wrap_delete_PyFunctor1, METH_O, NULL},
 	 { "PyFunctor1___call__", _wrap_PyFunctor1___call__, METH_VARARGS, NULL},
+	 { "PyFunctor1_findRoot", _wrap_PyFunctor1_findRoot, METH_VARARGS, NULL},
+	 { "PyFunctor1_findMinimum", _wrap_PyFunctor1_findMinimum, METH_VARARGS, NULL},
+	 { "PyFunctor1_findMaximum", _wrap_PyFunctor1_findMaximum, METH_VARARGS, NULL},
 	 { "PyFunctor1_swigregister", PyFunctor1_swigregister, METH_O, NULL},
 	 { "PyFunctor1_swiginit", PyFunctor1_swiginit, METH_VARARGS, NULL},
 	 { "delete_AbsRNG", _wrap_delete_AbsRNG, METH_O, NULL},
@@ -85316,6 +86218,8 @@ static PyMethodDef SwigMethods[] = {
 	 { "TruncatedCubicLogli_clone", _wrap_TruncatedCubicLogli_clone, METH_O, NULL},
 	 { "TruncatedCubicLogli_stepSize", _wrap_TruncatedCubicLogli_stepSize, METH_O, NULL},
 	 { "TruncatedCubicLogli_classname", _wrap_TruncatedCubicLogli_classname, METH_O, NULL},
+	 { "TruncatedCubicLogli_alpha", _wrap_TruncatedCubicLogli_alpha, METH_O, NULL},
+	 { "TruncatedCubicLogli_beta", _wrap_TruncatedCubicLogli_beta, METH_O, NULL},
 	 { "TruncatedCubicLogli_swigregister", TruncatedCubicLogli_swigregister, METH_O, NULL},
 	 { "TruncatedCubicLogli_swiginit", TruncatedCubicLogli_swiginit, METH_VARARGS, NULL},
 	 { "new_LogarithmicLogli", _wrap_new_LogarithmicLogli, METH_VARARGS, NULL},
@@ -85623,9 +86527,16 @@ static PyMethodDef SwigMethods[] = {
 	 { "AsymmetricEstimate_intervalEstimate", _wrap_AsymmetricEstimate_intervalEstimate, METH_O, NULL},
 	 { "AsymmetricEstimate_width", _wrap_AsymmetricEstimate_width, METH_O, NULL},
 	 { "AsymmetricEstimate_asymmetry", _wrap_AsymmetricEstimate_asymmetry, METH_O, NULL},
+	 { "AsymmetricEstimate___neg__", _wrap_AsymmetricEstimate___neg__, METH_O, NULL},
+	 { "AsymmetricEstimate___pos__", _wrap_AsymmetricEstimate___pos__, METH_O, NULL},
 	 { "AsymmetricEstimate___repr__", _wrap_AsymmetricEstimate___repr__, METH_O, NULL},
 	 { "AsymmetricEstimate___eq__", _wrap_AsymmetricEstimate___eq__, METH_VARARGS, NULL},
 	 { "AsymmetricEstimate___ne__", _wrap_AsymmetricEstimate___ne__, METH_VARARGS, NULL},
+	 { "AsymmetricEstimate___mul__", _wrap_AsymmetricEstimate___mul__, METH_VARARGS, NULL},
+	 { "AsymmetricEstimate___rmul__", _wrap_AsymmetricEstimate___rmul__, METH_VARARGS, NULL},
+	 { "AsymmetricEstimate___add__", _wrap_AsymmetricEstimate___add__, METH_VARARGS, NULL},
+	 { "AsymmetricEstimate___radd__", _wrap_AsymmetricEstimate___radd__, METH_VARARGS, NULL},
+	 { "AsymmetricEstimate___sub__", _wrap_AsymmetricEstimate___sub__, METH_VARARGS, NULL},
 	 { "delete_AsymmetricEstimate", _wrap_delete_AsymmetricEstimate, METH_O, NULL},
 	 { "AsymmetricEstimate_swigregister", AsymmetricEstimate_swigregister, METH_O, NULL},
 	 { "AsymmetricEstimate_swiginit", AsymmetricEstimate_swiginit, METH_VARARGS, NULL},

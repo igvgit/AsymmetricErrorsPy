@@ -141,18 +141,20 @@ class ProfileLogliOfASum:
             return s0
         step = s0
         factor = 1.1
+        converged = False
         for it in range(self.maxiter):
             atry = a0 + direction*step
             nlltry = -self(atry, True)
-            if nlltry == deltaLogLikelihood:
+            if abs(nlltry - deltaLogLikelihood) < self.eps:
                 return direction*(atry - self._argsum)
             if nlltry > deltaLogLikelihood:
+                converged = True
                 break
             else:
                 a0 = atry
                 nll0 = nlltry
                 step = step*factor
-        if nlltry < deltaLogLikelihood:
+        if not converged:
             self._iter_failure("_directedSigma")
         fcn = _ProfileSumLogliProxy(self)
         a = findRootUsingBisections(fcn, deltaLogLikelihood, a0, atry, self.eps)

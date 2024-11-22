@@ -5,8 +5,8 @@ representing results with asymmetric errors
 """
 
 __author__="Igor Volobouev (i.volobouev@ttu.edu)"
-__version__="0.1"
-__date__ ="May 31 2024"
+__version__="0.2"
+__date__ ="Oct 25 2024"
 
 import asepy as ase
 
@@ -72,3 +72,17 @@ r4 = ase.AsymmetricEstimate(0.0, -2.0, -1.0, ase.P)
 print("Result 4 is", r4)
 print("Result 4 width is", r4.width())
 print("Result 4 asymmetry is", r4.asymmetry())
+
+# You can perform unary+, unary-, as well as simple binary operations
+# between results and exact numbers
+print("-r1 is", -r1)
+print("+r1 is", +r1)
+print("Result 1 multiplied by 5 is", r1*5.0)
+assert r1*5.0 == 5.0*r1
+print("Result 1 divided by 5 is", r1/5.0)
+print("Result 1 multiplied by -5 is", r1*(-5.0))
+assert r1*(-5.0) == -5.0*r1
+print("Result 1 divided by -5 is", r1/(-5.0))
+print("Result 1 plus 5 is", r1 + 5.0)
+assert r1 + 5.0 == 5.0 + r1
+print("Result 1 minus 5 is", r1 - 5.0)

@@ -1,3 +1,5 @@
+%include stddecls.i
+
 %{
 #include "PyFunctor1.hh"
 %}

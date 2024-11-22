@@ -828,6 +828,15 @@ class PyFunctor1(object):
     def __call__(self, x_in: "double const") -> "double":
         return _asepy.PyFunctor1___call__(self, x_in)
 
+    def findRoot(self, rhs: "double const", xmin: "double const", xmax: "double const", tol: "double"=0.0) -> "std::pair< bool,double >":
+        return _asepy.PyFunctor1_findRoot(self, rhs, xmin, xmax, tol)
+
+    def findMinimum(self, xleft: "double const", xmiddle: "double const", xright: "double const", tol: "double"=0.0) -> "std::pair< bool,double >":
+        return _asepy.PyFunctor1_findMinimum(self, xleft, xmiddle, xright, tol)
+
+    def findMaximum(self, xleft: "double const", xmiddle: "double const", xright: "double const", tol: "double"=0.0) -> "std::pair< bool,double >":
+        return _asepy.PyFunctor1_findMaximum(self, xleft, xmiddle, xright, tol)
+
 # Register PyFunctor1 in _asepy:
 _asepy.PyFunctor1_swigregister(PyFunctor1)
 
@@ -4492,6 +4501,12 @@ class TruncatedCubicLogli(AbsShiftableLogli):
     def classname(self) -> "std::string":
         return _asepy.TruncatedCubicLogli_classname(self)
 
+    def alpha(self) -> "double":
+        return _asepy.TruncatedCubicLogli_alpha(self)
+
+    def beta(self) -> "double":
+        return _asepy.TruncatedCubicLogli_beta(self)
+
 # Register TruncatedCubicLogli in _asepy:
 _asepy.TruncatedCubicLogli_swigregister(TruncatedCubicLogli)
 
@@ -5433,6 +5448,12 @@ class AsymmetricEstimate(object):
     def asymmetry(self) -> "double":
         return _asepy.AsymmetricEstimate_asymmetry(self)
 
+    def __neg__(self) -> "ase::AsymmetricEstimate":
+        return _asepy.AsymmetricEstimate___neg__(self)
+
+    def __pos__(self) -> "ase::AsymmetricEstimate":
+        return _asepy.AsymmetricEstimate___pos__(self)
+
     def __repr__(self) -> "std::string":
         return _asepy.AsymmetricEstimate___repr__(self)
 
@@ -5442,10 +5463,34 @@ class AsymmetricEstimate(object):
     def __ne__(self, other: "AsymmetricEstimate") -> "bool":
         return _asepy.AsymmetricEstimate___ne__(self, other)
 
+    def __mul__(self, r: "double const &") -> "ase::AsymmetricEstimate":
+        return _asepy.AsymmetricEstimate___mul__(self, r)
+
+    def __rmul__(self, r: "double const &") -> "ase::AsymmetricEstimate":
+        return _asepy.AsymmetricEstimate___rmul__(self, r)
+
+    def __add__(self, r: "double const &") -> "ase::AsymmetricEstimate":
+        return _asepy.AsymmetricEstimate___add__(self, r)
+
+    def __radd__(self, r: "double const &") -> "ase::AsymmetricEstimate":
+        return _asepy.AsymmetricEstimate___radd__(self, r)
+
+    def __sub__(self, r: "double const &") -> "ase::AsymmetricEstimate":
+        return _asepy.AsymmetricEstimate___sub__(self, r)
+
     def fstr(self, formatSpecifier):
         fmt = "{{{!s}}} + {{{!s}}} - {{{!s}}}".format(
             formatSpecifier, formatSpecifier, formatSpecifier)
         return fmt.format(self.location(), self.sigmaPlus(), self.sigmaMinus())
+
+    # I had problems wrapping __truediv__ and __rsub__ with swig
+    def __truediv__(self, other):
+        if (other == 0.0):
+            raise ZeroDivisionError("AsymmetricEstimate divided by zero")
+        return self * (1.0/other)
+
+    def __rsub__(self, other):
+        return self * (-1.0) + other
 
     __swig_destroy__ = _asepy.delete_AsymmetricEstimate
 
