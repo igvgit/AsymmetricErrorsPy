@@ -2574,6 +2574,9 @@ def owensT(h: "double", alpha: "double") -> "double":
 def Gamma(x: "double") -> "double":
     return _asepy.Gamma(x)
 
+def logGamma(x: "double") -> "double":
+    return _asepy.logGamma(x)
+
 def incompleteGamma(a: "double", x: "double") -> "double":
     return _asepy.incompleteGamma(a, x)
 

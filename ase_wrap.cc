@@ -42654,6 +42654,35 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_logGamma(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  ecode1 = SWIG_AsVal_double(swig_obj[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "logGamma" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  {
+    try {
+      result = (double)ase::logGamma(arg1);
+    } catch (const std::exception& e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_incompleteGamma(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   double arg1 ;
@@ -85683,6 +85712,7 @@ static PyMethodDef SwigMethods[] = {
 	 { "inverseGaussCdf", _wrap_inverseGaussCdf, METH_O, NULL},
 	 { "owensT", _wrap_owensT, METH_VARARGS, NULL},
 	 { "Gamma", _wrap_Gamma, METH_O, NULL},
+	 { "logGamma", _wrap_logGamma, METH_O, NULL},
 	 { "incompleteGamma", _wrap_incompleteGamma, METH_VARARGS, NULL},
 	 { "inverseIncompleteGamma", _wrap_inverseIncompleteGamma, METH_VARARGS, NULL},
 	 { "incompleteGammaC", _wrap_incompleteGammaC, METH_VARARGS, NULL},
